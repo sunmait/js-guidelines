@@ -66,7 +66,42 @@ enum SORT_OPTION {
 
 ## Filters
 
-TODO
+-   Format:
+
+```ts
+interface WithFiltersParam<Fields extends string> {
+    filters: FilterParam<Fields>[];
+}
+
+interface WithFiltersOrParam<Fields extends string> {
+    filtersOr: FilterParam<Fields>[];
+}
+
+interface FilterParam<Fields extends string> {
+    field: Fields;
+    type: FilterType;
+    operator: FilterOperator;
+    value: FilterParamValue | FilterParamValue[];
+}
+
+type FilterType = 'text' | 'number' | 'date';
+type FilterParamValue = string | number | boolean | null;
+
+type FilterOperator =
+    | ArrayFilterOperators
+    | TextFilterOperators
+    | NumberFilterOperators
+    | DateFilterOperators;
+type TextFilterOperators = 'equals';
+type NumberFilterOperators =
+    | 'equals'
+    | 'lessThan'
+    | 'greaterThan'
+    | 'lessThanOrEqual'
+    | 'greaterThanOrEqual';
+type DateFilterOperators = 'equals' | 'lessThanEqual' | 'overlaps' | 'contains';
+type ArrayFilterOperators = 'in';
+```
 
 ## Search
 

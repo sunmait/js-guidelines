@@ -46,9 +46,7 @@ export interface PaginatedResponse<Entity> {
 
 ## Sorting
 
-Since our list endpoints are POST instead of GET our sort format is:
-
--   Format:
+### Format
 
 ```ts
 interface WithSortParams<SortableColumns> {
@@ -63,6 +61,9 @@ enum SORT_OPTION {
     DESC = 'desc',
 }
 ```
+
+### Requirements
+1. Sort by multiple fields is supported by default (contract from the format section above covers that).
 
 ## Filters
 

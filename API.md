@@ -106,24 +106,7 @@ type ArrayFilterOperators = 'in';
 
 ### Requirements
 
-1. API supports only one filter per field, second option will be ignored.
-
-`Example`:
-
-```ts
-const params = {
-    filterModel: [
-        { field: 'id', operator: 'equals', value: '1' },
-        // This filter is ignored because filter above
-        // already use 'id' field
-        { field: 'id', operator: 'in', value: ['1', '2'] },
-    ],
-};
-```
-
-`Why`: supporting multiple filter for the same field adds lot of complexity to the code. It's just hard to support and it's a very rare case to add this complexity everywhere. If we will need to support it we'll find some workaround.
-
-2. Every List/Search endpoint should support filter by entity id.
+1. Every List/Search endpoint should support filter by entity id.
 
 ## Search
 

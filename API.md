@@ -122,6 +122,8 @@ const params = {
 
 `Why`: supporting multiple filter for the same field adds lot of complexity to the code. It's just hard to support and it's a very rare case to add this complexity everywhere. If we will need to support it we'll find some workaround.
 
+2. Every List/Search endpoint should support filter by entity id.
+
 ## Search
 
 -   Format:

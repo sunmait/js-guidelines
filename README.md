@@ -18,6 +18,10 @@ TODO
 
 Use [prettier](https://prettier.io/) for code formatting. Use `.prettierrc` file from this repo as config.
 
-## API
+## API contracts
 
-See [API contracts](/API.md)
+See [Link](/API_CONTRACTS.md)
+
+## Backend best practices & recommendations
+
+See [Link](/BACKEND_BEST_PRACTICES_AND_RECOMMENDATIONS.md)

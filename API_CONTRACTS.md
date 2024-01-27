@@ -3,7 +3,7 @@
 ## Common
 
 -   Use camelCase for body params and response formats and kebab-case for path and query params
-    -   Valid url: https://api.snmt.com/api/v1/project-activities/1?include_count=true
+    -   Valid url: https://api.snmt.com/api/v1/project-activities/1?includeCount=true
 -   All list endpoints should be written as HTTP POST not GET.
     -   **Example:** instead of `GET /users` we're going to have `POST /users/search`
     -   **Why:** browser URL length limit is 2048 characters and because of filters (array of uuid v4 can exceed this limit). We're not going to wait for this moment and make all our list endpoints as POST by default.
@@ -30,7 +30,7 @@ export interface PaginatedResponse<Entity> {
     data: Entity[];
     metadata: {
         // Count is optional because by default it's not sent.
-        // Consumer should use a include_count param to get count
+        // Consumer should use a includeCount param to get count
         count?: number;
         limit: number;
         offset: number;
@@ -38,7 +38,7 @@ export interface PaginatedResponse<Entity> {
 }
 ```
 
--   All list endpoints by default don't return `metadata.count`. There's special parameter `{include_count: true}` to request count.
+-   All list endpoints by default don't return `metadata.count`. There's special parameter `{includeCount: true}` to request count.
     -   **Why:** For optimization purposes. It's not cheap to calculate count and there're cases when requesting count is not needed:
         -   **Case 1:** Frontend optimization to request count only when user visits page for the first time. If user visited page 1 and then visited page 2 - there's no need to request count for page 2 because it's not changed.
             -   Note: don't forget to request count if filter or search params are changed

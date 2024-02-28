@@ -18,6 +18,10 @@ TODO
 
 Use [prettier](https://prettier.io/) for code formatting. Use `.prettierrc` file from this repo as config.
 
+## JavaScript/Typescript agreements & standards
+
+See [Link](/JS_TS_AGREEMENTS_AND_STANDARDS.md)
+
 ## API contracts
 
 See [Link](/API_CONTRACTS.md)

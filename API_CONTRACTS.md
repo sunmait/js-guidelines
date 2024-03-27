@@ -5,7 +5,7 @@
 -   Use camelCase for body params and response formats and kebab-case for path and query params
     -   Valid url: https://api.snmt.com/api/v1/project-activities/1?includeCount=true
 -   All list endpoints should be written as HTTP POST not GET.
-    -   **Example:** instead of `GET /users` we're going to have `POST /users/search`
+    -   **Example:** instead of `GET /users` we're going to have `POST /users/list`
     -   **Why:** browser URL length limit is 2048 characters and because of filters (array of uuid v4 can exceed this limit). We're not going to wait for this moment and make all our list endpoints as POST by default.
 
 ## Pagination
@@ -125,7 +125,7 @@ interface SearchParam<Fields extends string> {
 
 -   Field `search.fields` responsible for listing fields that backend should search by.
 -   **IMPORTANT:** Every list endpoint must support `search.fields` even if backend implementation searches only by 1 field today, tomorrow it can be more.
--   **Example:** client sends `POST /users/search` with body `{ search: { term: 'daniel', fields: ['fullName', 'email'] } }` which means backend should return all users where 'daniel' is used in email or full name
+-   **Example:** client sends `POST /users/list` with body `{ search: { term: 'daniel', fields: ['fullName', 'email'] } }` which means backend should return all users where 'daniel' is used in email or full name
 
 ## Optional fields
 

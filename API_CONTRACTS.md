@@ -21,8 +21,7 @@ export interface WithPaginationParams {
 
 -   Every list endpoint should have pagination.
     -   **Exception:** There can be exceptions when endpoint returning an entity which count never gonna be more than 100 - in that case endpoint shouldn't have pagination.
--   By default endpoint should have max `limit` value being 100.
-    -   **Exception:**
+-   By default endpoint should have max `limit` value being 100. There can be exceptions but only reasonable.
 -   All list endpoints with pagination should return response in the following format:
 
 ```ts
